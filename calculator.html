@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    h1 {
+        text-align: center;
+        color: red;
+    }
+    table
+    {
+        background-color: grey;
+        border-radius: 2px;
+    }
+    input
+    {
+        border-radius: 2px;
+        width: 30px;
+        font-size: 10px;
+        text-align: center;
+    }
+    #input
+    {
+        width: 130px;
+    }
+    #equals
+    {
+        height: 70px;
+    }
+</style>
+</head>
+<body>
+     <h1>CALCULATOR</h1>
+     <table border="1px" align="center">
+         <tr>
+            <td colspan="4"><input type="text" id="input"></td>
+         </tr>
+         <tr>
+            <td><input type="button" value="+" onclick="calulation('+')"></td>
+            <td><input type="button" value="-" onclick="calulation('-')"></td>
+            <td><input type="button" value="*" onclick="calulation('*')"></td>
+            <td><input type="button" value="/" onclick="calulation('/')"></td>
+         </tr>
+         <tr>
+            <td><input type="button" value="9" onclick="calulation('9')"></td>
+            <td><input type="button" value="8" onclick="calulation('8')"></td>
+            <td><input type="button" value="7" onclick="calulation('7')"></td>
+            <td><input type="button" value="6" onclick="calulation('6')"></td>
+         </tr>
+         <tr>
+            <td><input type="button" value="5" onclick="calulation('5')"></td>
+            <td><input type="button" value="4" onclick="calulation('4')"></td>
+            <td><input type="button" value="3" onclick="calulation('3')"></td>
+            <td rowspan="3"><input type="button" value="=" onclick="evaluation()" id="equals"></td>
+         </tr>
+         <tr>
+            <td><input type="button" value="2" onclick="calulation('2')"></td>
+            <td><input type="button" value="1" onclick="calulation('1')"></td>
+            <td><input type="button" value="0" onclick="calulation('0')"></td>
+         </tr>
+         <tr>
+            <td><input type="button" value="." onclick="calulation('.')"></td>
+            <td><input type="button" value="AC" onclick="allclear()"></td>
+            <td><input type="button" value="del" onclick="delete1()"></td>
+       
+         </tr>
+
+     </table>
+     <script>
+        function calulation(data)
+        {
+            console.log(data)
+            let a=document.getElementById("input")
+            // console.log(a)
+            // a.value=data onl;y for 1 value after that del 
+            a.value+=data
+            
+        }
+        function evaluation()
+        {
+               let a=document.getElementById("input").value;
+               console.log(a)
+               let y=eval(a)
+               console.log (y)
+               document.getElementById("input").value=y
+        }
+        function allclear()
+        {
+            //    let a=document.getElementById("input").value;
+            //console.log(a)
+            // console.log(typeof a)
+            // a.value=""
+             document.getElementById("input").value=""
+        }
+        function delete1()
+        {
+            let inp =document.getElementById("input")
+            //    console.log(inp.value)
+            inp.value=inp.value.slice(0,-1)
+            if(inp.value=="")
+            {
+                inp.value=0
+
+            }
+
+        }
+     </script>
+</body>
+</html>

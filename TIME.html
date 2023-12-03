@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: lightskyblue;
+          }
+    </style>
+</head>
+<body>
+    <h1 id="abc"></h1>
+    <script>
+            let arr=["sun","mon","tue","wed","thur","fri","sat"]
+            let arr1=["jan","feb","mar","apr","may","june","july","aug","sept","oct","nov","dec"]
+           let date=new Date()
+           console.log(date)
+
+            let day=date.getDay()
+            console.log(day)
+          let day1=arr[day]
+          console.log(day1)
+          let month=date.getMonth()
+          console.log(month)
+          let month1=arr1[month]
+          console.log(month1)
+            let date1=date.getDate()
+            console.log(date1)
+            let year=date.getFullYear()
+            console.log(year)
+            let hr=date.getHours()
+            console.log(hr)
+                // if(hr<10)
+                // {
+                //     h="0"+h;
+                // }
+                let h1=(hr<10)?("0"+hr):hr;
+                console.log(h1)
+            let min=date.getMinutes()
+            console.log(min)
+            let m1=(min<10)?("0"+min):min
+            console.log(m1)
+            let sec=date.getSeconds()
+            console.log(sec)
+            let s1=(sec<10)?("0"+sec):sec
+            console.log(s1)
+            // 4
+
+            //setinterval() or settimeout()
+            function clock()
+            {
+                let date=new Date()
+                let hr=date.getHours();
+                let h1=(hr<10)?("0"+hr):hr;
+                let min=date.getMinutes();
+                let m1=(min<10)?("0"+min):min
+                let sec=date.getSeconds();
+                let s1=(sec<10)?("0"+sec):sec
+
+                document.getElementById("abc").innerHTML=`${h1}:${m1}:${s1}`;
+                setTimeout(() => {
+                 clock()
+                },1000);
+
+            }
+             clock()
+
+            //  setInterval(()=>{
+            //     clock()
+            //  },1000);
+    </script>
+</body>
+</html>
